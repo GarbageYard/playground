@@ -2,7 +2,7 @@ pipeline {
 	agent { label 'slave1' }
 	
 	triggers {
-		pollSCM ''
+		pollSCM '* * * * *'
 	}
 
 	stages {
