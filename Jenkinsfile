@@ -21,6 +21,9 @@ def gitTag(){
 
     bat "echo from bat before tag ${tag} after tag"
     bat "git tag -a ${tag} -m \"tagging with ${message}\""
-	bat "git tag"
-    bat "git push origin ${tag}"
+	bat "git tag > tag_list"
+	bat "git add tag_list"
+	bat "git commit -m 'Pushing tag_list'"
+	bat "git push"
+	bat "git push origin ${tag}"
 }
