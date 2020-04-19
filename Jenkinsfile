@@ -20,6 +20,6 @@ def gitTag(){
     print message
 
     bat "echo from bat before tag ${tag} after tag"
-    bat "git tag -a ${tag} -m "tagging with ${message}""
+    bat "git tag -a ${tag} -m \"tagging with ${message}\""
     bat "git push origin ${tag}"
 }
