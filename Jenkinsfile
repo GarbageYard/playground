@@ -5,9 +5,7 @@ pipeline {
 	stages {
 		stage('unzip') {
             steps {
-                script {
-					unzip dir: 'C:\\package', glob: '', zipFile: 'test.zip'
-                }
+                unzip dir: 'C:\\package', glob: '', zipFile: 'test.zip'
             }
         }
 	}
