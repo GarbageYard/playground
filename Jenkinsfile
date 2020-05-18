@@ -3,10 +3,12 @@ pipeline {
 	agent any
 	
 	stages {
-		stage ('Echo') {
-			steps {
-				echo 'Hello, World!!!!!'
-			}
-		}
+		stage('unzip') {
+            steps {
+                script {
+					unzip dir: 'E:\\package', glob: '', zipFile: 'test.zip'
+                }
+            }
+        }
 	}
 }
