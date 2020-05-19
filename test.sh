@@ -4,4 +4,3 @@
 
 echo Hello
 mkdir /tmp1/abc
-echo "Hello Success"
