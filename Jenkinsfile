@@ -6,10 +6,10 @@ pipeline {
     }
 
 	stages {
-		stage ('Speak') {
+		stage ('Check string') {
 			when {
 				// Use 'git_commit_msg' here to check the string you're interested in
-				expression { env.git_commit_msg ==~ /[cd:deploy]/ }
+				expression { git_commit_msg ==~ /[cd:deploy]/ }
 			}
 			steps {
 				echo "Hello, there!"
