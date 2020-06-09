@@ -7,12 +7,12 @@ pipeline {
 
 	stages {
 		stage ('Speak') {
-			//when {
+			when {
 				// Use 'git_commit_msg' here to check the string you're interested in
-			//	expression { git_commit_msg =~ 'greeting' }
-			//}
+				expression { git_commit_msg =~ '[ci:deploy]' }
+			}
 			steps {
-				echo "Value of git_commit_msg: ${git_commit_msg}"
+				echo "Hello, there!"
 			}
 		}
 	}
