@@ -2,17 +2,17 @@ pipeline {
 	agent any
 
 	environment {
-		git_commit_msg = sh(returnStdout: true, script: 'git log --format="medium" -1 ${GIT_COMMIT} | <fetch-commit-message>').trim()
+		git_commit_msg = sh(returnStdout: true, script: 'git log --format="medium" -1 c8b040d | tail -1').trim()
     }
 
 	stages {
 		stage ('Speak') {
-			when {
+			//when {
 				// Use 'git_commit_msg' here to check the string you're interested in
-				expression { params.REQUESTED_ACTION == 'greeting' }
-			}
+			//	expression { git_commit_msg =~ 'greeting' }
+			//}
 			steps {
-				echo "Hello, bitwiseman!"
+				echo "Value of git_commit_msg: ${git_commit_msg}"
 			}
 		}
 	}
